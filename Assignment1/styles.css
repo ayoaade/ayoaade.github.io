@@ -1,0 +1,43 @@
+body {
+  background-image: url("my.jpg");
+}
+.container {
+  background-color: #202020;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.container ul {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+  text-align: left;
+  color: white;
+}
+.container h1 {
+  color: white;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+}
+.basicinfo {
+  color: white;
+}
+.program {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.program img {
+  border-radius: 8px;
+  width: 150px;
+}
+.courses ul {
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 16px;
+  text-align: left;
+}
