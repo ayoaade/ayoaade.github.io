@@ -12,7 +12,7 @@
         <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
         <button
           class="button"
-          onclick="console.log('You haven\'t written a function yet!');"
+          onclick="console.log(myfunction(idk));"
         >
           Click me to replace list entries
         </button>
@@ -280,7 +280,7 @@
               { name: "Zambia", code: "ZM" },
               { name: "Zimbabwe", code: "ZW" }
             ];
-
+            console.log("List of countries in the world", countries);
             sessionStorage.setItem("json_item", JSON.stringify(countries[name]));
             const str = sessionStorage.setItem("json_item");
             function myFunction(str, ) {
@@ -288,9 +288,9 @@
             var i;
             for (var i = 0; i < 51 ; i++) {
             var idk = str[Math.floor(Math.random() * str.length)];
-            console.log(myfunction(idk)); }
+            }
             document.getElementsByClassName("const").innerHTML = idk;
-            console.log("List of countries in the world", countries);
+            }
     </script>
   </body>
 </html>
