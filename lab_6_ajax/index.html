@@ -20,7 +20,7 @@
       function loadData() {
         fetch("ajax_sample.json")
           .then(res => res.json())
-          .then(data => data.map(c => c.code + ";" + c.name)) // only one thing can be returned here, but you can use more than one property in it
+          .then(data => data.map(c => c.code + ";" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+  c.name)) // only one thing can be returned here, but you can use more than one property in it
           .then(data => {
             const instructions = document.querySelector(".instructions");
             instructions.innerHTML = " ";
