@@ -8,7 +8,7 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class="header">Test AJAX page</div>
+        <div class="header">UMD Bus Routes</div>
         <button class="button" onclick="loadData()">Load Some JSON</button>
         <div class="content">
           <ol class="instructions"></ol>
@@ -20,23 +20,18 @@
       function loadData() {
         fetch("https://api.umd.io/v0/bus/routes")
           .then(res => res.json())
-          .then(data => data.map(c => c.code + "-" +  c.name)) // only one thing can be returned here, but you can use more than one property in it
+          .then(data => data.map(c => c.route_id + "-" + c.title)) // only one thing can be returned here, but you can use more than one property in it
           .then(data => {
             const instructions = document.querySelector(".instructions");
             instructions.innerHTML = " ";
-            for (let i = 0; i < 15; i++) {
-              const selectNumber = getRandomIntInclusive(0, 242);
-              let el = document.createElement("li");
-              el.innerText = data[selectNumber];
-              instructions.appendChild(el);
-            }
-            function getRandomIntInclusive(min, max) {
-              min = Math.ceil(min);
-              max = Math.floor(max);
-              return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-            //return data;// // you MUST return from a closed fat-arrow
+            let el = document.createElement("li");
+            el.innerText = data[selectNumber];
+            instructions.appendChild(el);
+            // you can now work in this area
+
+            return res;
           })
+          .then(data => (document.querySelector(".content").innerText = data));
       }
     </script>
   </body>
