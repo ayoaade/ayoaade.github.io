@@ -27,6 +27,10 @@
             let el = document.createElement("li");
             el.innerText = data[selectNumber];
             instructions.appendChild(el);
+            const index = instructions.findIndex(
+              route_number => route_id === "105"
+            );
+            console.log(instructions[index]);
             // you can now work in this area
 
             return res;
@@ -36,3 +40,5 @@
     </script>
   </body>
 </html>
+
+
