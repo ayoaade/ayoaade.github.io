@@ -22,26 +22,35 @@
         fetch("/api")
           .then(res => res.json())
           .then(res => {
-            console.log(res); // logging step to check what we got
+            // logging step to check what we got
             return res;
           })
-          .then(res => res.data.map(c => c.route_id))
-          .then(
-            codes => (document.querySelector(".content").innerText = codes)
-          );
-        function makeListInHTML(array) {
-          const htmlTarget = document.querySelector(".content");
-          htmlTarget.innerHTML = "";
-          let el1 = document.createElement("ol");
-          el1.className = "list";
-          htmlTarget.appendChild(el1);
-
-          for (let i = 0; i < array.length; i++) {
-            let el = document.createElement("li");
-            el.innerText = array[i];
-            htmlTarget.appendChild(el);
-          }
-        }
+          .then(res => {
+            makeListInHTML(res.data);
+            function makeListInHTML(array) {
+              const htmlTarget = document.querySelector(".content");
+              htmlTarget.innerHTML = "";
+              let el1 = document.createElement("ol");
+              el1.className = "list";
+              htmlTarget.appendChild(el1);
+              for (let i = 0; i < array.length; i++) {
+                let el = document.createElement("li");
+                el.innerText = array[i];
+                el1.appendChild(el);
+              }
+            }
+            // const htmlTarget = document.querySelector(".content");
+            // htmlTarget.innerHTML = "";
+            // let el1 = document.createElement("ol");
+            // el1.className = "list";
+            // htmlTarget.appendChild(el1);
+            // for (let i = 0; i < res.data.length; i++) {
+            //   let el = document.createElement("li");
+            //   el.innerText = res.data[i];
+            //   htmlTarget.appendChild(el);
+            console.log(res);
+            return res;
+          });
       }
     </script>
   </body>
